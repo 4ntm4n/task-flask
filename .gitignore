@@ -1,6 +1,6 @@
 core.Mircrosoft*
 core.mongo*
-env.py
 __pycache__/
 *.py[cod]
+env.py
 node_modules/
