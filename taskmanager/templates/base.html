@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
     <title>Task Flask</title>
 </head>
+
 <body>
-    Hello World!
+    <header>
+        <!-- top navbar -->
+        <nav class="light-blue darken-1" >
+            <div class="nav-wrapper">
+                <a href="{{ url_for('home') }}" class="brand-logo">Task Manager</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="">New Task</a></li>
+                    <li><a href="{{ url_for('categories') }}">Categories</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- mobile navbar -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="">New Task</a></li>
+            <li><a href="{{ url_for('categories') }}">Categories</a></li>
+        </ul>
+    </header>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    
 </body>
+<footer class="page-footer blue darken-3">
+    <div class="footer-copyright">
+      <div class="container">
+      © 1991 testing flask 
+      <a class="grey-text text-lighten-4 right" target="_blank" href="https://github.com/4ntm4n/">github</a>
+      </div>
+    </div>
+  </footer>
 </html>
