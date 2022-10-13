@@ -1,7 +1,7 @@
-core.Mircrosoft*
+core.Microsoft*
 core.mongo*
+core.python*
+env.py
 __pycache__/
 *.py[cod]
-env.py
 node_modules/
-env/
